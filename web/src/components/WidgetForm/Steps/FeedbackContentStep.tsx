@@ -1,0 +1,25 @@
+import { feedbackType, feedbackTypes } from "..";
+import { CloseButton } from "../../CloseButton";
+
+interface FeedbackContentStepProps {
+  feedbackType: feedbackType;
+}
+
+export function FeedbackContentStep({feedbackType}: FeedbackContentStepProps) {
+  const feedbackTypeInfo = feedbackTypes[feedbackType];
+  return (
+    <>
+      <header>
+        <span className="text-xl leading-6 flex items-center gap-2">
+          <img src={feedbackTypeInfo.img.source} alt={feedbackTypeInfo.img.alt} className="w-6 h-6"/>
+          {feedbackTypeInfo.title}
+        </span>
+
+        <CloseButton />
+      </header>
+      <div className="flex py-8 gap-2 w-full">
+        
+      </div>
+    </>
+  );
+}
